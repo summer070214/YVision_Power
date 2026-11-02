@@ -33,16 +33,12 @@ enable_language(C ASM)
 
 # Create an executable object type
 add_executable(${CMAKE_PROJECT_NAME}
-        BSP/ADC/ADC.c
-        BSP/ADC/ADC.h
-        BSP/I2C1/I2C1.c
-        BSP/I2C1/I2C1.h
-        BSP/GPIO/GPIO.c
-        BSP/GPIO/GPIO.h
-        APP/Communication/Communication.c
-        APP/Communication/Communication.h
-        APP/KEY/KEY.c
-        APP/KEY/KEY.h
+        USER/Communication/Communication.c
+        USER/Communication/Communication.h
+        USER/KEY/KEY.c
+        USER/KEY/KEY.h
+        USER/JOYSTICK/Joystick.c
+        USER/JOYSTICK/Joystick.h
 
 )
 
@@ -62,11 +58,9 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
 # Add include paths
 target_include_directories(${CMAKE_PROJECT_NAME} PRIVATE
     # Add user defined include paths
-        APP/Communication
-        APP/KEY
-        BSP/ADC
-        BSP/GPIO
-        BSP/I2C1
+        USER/Communication
+        USER/KEY
+        USER/JOYSTICK
 )
 
 # Add project symbols (macros)
